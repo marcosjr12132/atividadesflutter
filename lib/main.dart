@@ -1,38 +1,36 @@
 import 'package:flutter/material.dart';
-import './categorias.dart';
+import 'package:marcos/telas/tela_categorias.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(AppCardapio());
 }
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+class AppCardapio extends StatelessWidget{
+    @override
+    Widget build(BuildContext context) {
     return MaterialApp(
-      home: CategoriaListScreen(),
+        title: "Cardápio",
+        theme: ThemeData(
+            primarySwatch : Colors.blue,
+        ),
+        home: TelaCategorias(),    
     );
-  }
+}
 }
 
-class CategoriaListScreen extends StatelessWidget {
-  final List<Categoria> categorias = mockCategories;
+class PaginaInicial extends StatefulWidget{
+    @override 
+    PaginaInicialState createState() => PaginaInicialState();
 
+}
+
+class PaginaInicialState extends State<PaginaInicial>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Categorias')),
-      body: ListView.builder(
-        itemCount: categorias.length,
-        itemBuilder: (context, index) {
-          Categoria categoria = categorias[index];
-          return ListTile(
-            leading: CircleAvatar(backgroundColor: categoria.color),
-            title: Text(categoria.titulo),
-            onTap: () {
-            },
-          );
-        },
-      ),
+        appBar: AppBar(
+            title: Text("Cardápio CEFET 2023"),
+        ),
+        body: Center(child: Text("Corpo do meu app"))
     );
   }
 }

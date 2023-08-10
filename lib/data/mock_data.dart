@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/mock_data.dart';
+import '../models/categorias.dart';
 
 const mockCategories = [
   Categoria(
